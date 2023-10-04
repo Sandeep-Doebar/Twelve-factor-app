@@ -1,10 +1,10 @@
 #code for basic python app
 import redis
 from flask import Flask
-
+import os  
 
 app = Flask(__name__)
-redisDb = redis.Redis(host='redis', port=6379)
+redisDb = redis.Redis(host=os.environ['HOST'], port=os.environ['PORT'])
 
 @app.route('/')
 def Santwelvefactorapp():
