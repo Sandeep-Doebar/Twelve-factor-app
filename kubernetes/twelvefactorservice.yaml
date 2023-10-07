@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: twelvefactorapp
+  namespace: default
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 5000
+      nodePort: 30007
+  selector:
+    run: twelvefactorapp
+  type: NodePort

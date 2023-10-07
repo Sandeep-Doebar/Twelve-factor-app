@@ -5,6 +5,7 @@ metadata:
 spec:
   containers:
   - name: twelvefactorapp
-    image: sankara88/twelvefactorapp:latest
+    image: sankara88/twelvefactorapp:071023
   imagePullSecrets:
   - name: regcred
+  

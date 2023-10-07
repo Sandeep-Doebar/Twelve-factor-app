@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twelvefactorapp
+spec:
+  selector:
+    matchLabels:
+      run: twelvefactorapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: twelvefactorapp
+    spec:
+      containers:
+      - name: my-twelvefactorapp
+        image: sankara88/twelvefactorapp:071023
+        ports:
+        - containerPort: 5000
+        env:
+        - name: "HOST"
+          value: "redis"
+        - name: "PORT"
+          value: "6379"
+      imagePullSecrets:
+      - name: regcred
